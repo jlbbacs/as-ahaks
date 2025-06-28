@@ -4,7 +4,9 @@ import { ChatMessage } from './components/ChatMessage';
 import { MessageInput } from './components/MessageInput';
 import { ErrorMessage } from './components/ErrorMessage';
 import { EmptyState } from './components/EmptyState';
+import { ApiKeyGuide } from './components/ApiKeyGuide';
 import { useChat } from './hooks/useChat';
+import { AI_CONFIG } from './config/ai';
 
 function App() {
   const {
@@ -20,6 +22,14 @@ function App() {
   } = useChat();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Check if error is API-related
+  const isApiError = error && (
+    error.includes('Rate limit exceeded') || 
+    error.includes('Invalid API key') ||
+    error.includes('Access forbidden') ||
+    error.includes('API request failed')
+  );
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -39,7 +49,11 @@ function App() {
         )}
         
         <div className="flex-1 overflow-y-auto">
-          {messages.length === 0 ? (
+          {isApiError ? (
+            <div className="max-w-4xl mx-auto px-4 py-6">
+              <ApiKeyGuide error={error} provider={AI_CONFIG.provider} />
+            </div>
+          ) : messages.length === 0 ? (
             <EmptyState />
           ) : (
             <div className="max-w-4xl mx-auto px-4 py-6">
