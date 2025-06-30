@@ -17,7 +17,7 @@ export const EmptyState: React.FC = () => {
           Start a conversation with our AI assistant. Ask questions, get help, or just chat!
         </p>
         
-        <div className="grid grid-cols-1 gap-4 text-left">
+        {/* <div className="grid grid-cols-1 gap-4 text-left">
           <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-gray-200">
             <Zap className="w-5 h-5 text-blue-500" />
             <div>
@@ -33,7 +33,7 @@ export const EmptyState: React.FC = () => {
               <p className="text-sm text-gray-600">Listen to responses with text-to-speech</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
