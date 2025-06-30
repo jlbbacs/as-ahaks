@@ -7,6 +7,7 @@ export interface Message {
 }
 
 export interface AIConfig {
+  provider: 'openai' | 'deepseek' | 'openrouter';
   apiKey: string;
   model: string;
   temperature: number;
