@@ -22,10 +22,10 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">
-                AI Assistant
+               Erza
               </h1>
               <p className="text-sm text-gray-600">
-                Conversational AI Builder
+               Chat JLB
               </p>
             </div>
           </div>

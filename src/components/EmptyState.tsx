@@ -10,7 +10,7 @@ export const EmptyState: React.FC = () => {
         </div>
         
         <h2 className="text-2xl font-bold text-gray-900 mb-3">
-          Welcome to AI Assistant
+          Welcome to Erza AI Assistant
         </h2>
         
         <p className="text-gray-600 mb-8 leading-relaxed">
